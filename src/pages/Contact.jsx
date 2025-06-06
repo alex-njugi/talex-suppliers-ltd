@@ -6,7 +6,7 @@ export default function Contact() {
     <section className="contact-page">
       <h1 className="contact-title">Contact us</h1>
       <p className="contact-description">
-        Got a question? Send us a message. We would love to hear from you and we will respond as soon as possible.
+        Got a question? Send us a message. We respond as soon as possible.
       </p>
 
       <div className="map-container">
