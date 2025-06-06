@@ -1,5 +1,3 @@
-
-
 // ✅ App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -15,6 +13,8 @@ import Contact from './pages/Contact';
 import AdminDashboard from './pages/AdminDashboard';
 import AdminProducts from './pages/AdminProducts';
 import AdminOrders from './pages/AdminOrders';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
@@ -34,6 +34,8 @@ export default function App() {
             <Route path="/orders" element={<Orders />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
             <Route path="/admin" element={<AdminDashboard />} />
             <Route path="/admin/products" element={<AdminProducts />} />
             <Route path="/admin/orders" element={<AdminOrders />} />
@@ -42,7 +44,5 @@ export default function App() {
         <Footer />
       </div>
     </Router>
-  )
+  );
 }
-
-
