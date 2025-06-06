@@ -25,8 +25,9 @@ export default function Navbar() {
           <FontAwesomeIcon icon={faCartShopping} className="cart-icon" />
         </NavLink>
         <NavLink to="/login" className="nav-auth">Log in</NavLink>
-        <button className="hamburger" onClick={() => setOpen(!open)}>☰</button>
       </div>
+
+      <button className="hamburger" onClick={() => setOpen(!open)}>☰</button>
 
       {/* Mobile Dropdown */}
       <div className={`mobile-menu ${open ? 'open' : ''}`}>

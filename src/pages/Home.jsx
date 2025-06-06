@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import '../index.css';
@@ -19,9 +20,9 @@ export default function Home() {
         <p data-aos="fade-up" data-aos-delay="300">
           Premium Car Accessories & Powerline Supply Tools
         </p>
-        <button className="hero-button" data-aos="zoom-in" data-aos-delay="600">
+        <Link   to="/products" className="hero-button" data-aos="zoom-in" data-aos-delay="600">
           Shop Now
-        </button>
+        </Link>
       </div>
     </section>
   );
