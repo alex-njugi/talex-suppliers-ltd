@@ -6,7 +6,7 @@ export default function Contact() {
     <section className="contact-page">
       <h1 className="contact-title">Contact us</h1>
       <p className="contact-description">
-        Got a question? Send us a message. We respond as soon as possible.
+        Got a question? Send us a message. We always respond as soon as possible.
       </p>
 
       <div className="map-container">
@@ -37,9 +37,9 @@ export default function Contact() {
         <div className="contact-info">
           <h2>Get in touch</h2>
           <p>Feel free to contact us on any of the listed contact methods below</p>
-          <div className="info-item"><span>📍</span><strong>Address</strong><br />Ngong Road P O 45425 Nairobi KE</div>
-          <div className="info-item"><span>📞</span><strong>Phone</strong><br />+254708444961</div>
-          <div className="info-item"><span>📧</span><strong>Email</strong><br />info@talexsuppliers.com</div>
+          <div className="info-item"><span>📍</span><strong>Address</strong><br />kirinyaga business centre- kirinyaga road nairobi, Kenya 522-00300</div>
+          <div className="info-item"><span>📞</span><strong>Phone</strong><br />+254 722 690154</div>
+          <div className="info-item"><span>📧</span><strong>Email</strong><br />talexsuppliers@gmail.com</div>
         </div>
       </div>
     </section>
