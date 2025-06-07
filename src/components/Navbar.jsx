@@ -16,7 +16,7 @@ export default function Navbar() {
       <div className="center-links">
         <NavLink to="/" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Home</NavLink>
         <NavLink to="/products" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Products</NavLink>
-        <NavLink to="/about" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>About</NavLink>
+        <NavLink to="/about" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>About Us</NavLink>
         <NavLink to="/contact" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Contacts</NavLink>
       </div>
 
@@ -33,7 +33,7 @@ export default function Navbar() {
       <div className={`mobile-menu ${open ? 'open' : ''}`}>
         <NavLink to="/" className="nav-link">Home</NavLink>
         <NavLink to="/products" className="nav-link">Products</NavLink>
-        <NavLink to="/about" className="nav-link">About</NavLink>
+        <NavLink to="/about" className="nav-link">About Us</NavLink>
         <NavLink to="/contact" className="nav-link">Contact</NavLink>
         <NavLink to="/login" className="nav-link">Login</NavLink>
         <NavLink to="/signup" className="nav-link">Signup</NavLink>
