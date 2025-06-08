@@ -6,10 +6,10 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 
 const dummyProducts = [
-  { id: 1, name: 'Turbo Air Filter', category: 'car', price: 'KSh 2,500', image: '/images/car1.jpg' },
-  { id: 2, name: 'LED Fog Lights', category: 'car', price: 'KSh 1,800', image: '/images/car2.jpg' },
-  { id: 3, name: 'Surge Protector', category: 'powerline', price: 'KSh 3,200', image: '/images/power1.jpg' },
-  { id: 4, name: 'Voltage Tester', category: 'powerline', price: 'KSh 950', image: '/images/power2.jpg' },
+  { id: 1, name: 'Gladiator .D. Polish', category: 'car', price: 'KSh 300', image: '/images/gladiator.jpg' },
+  { id: 2, name: 'Carall Wipers', category: 'car', price: 'KSh 200', image: '/images/carall.png' },
+  { id: 3, name: 'Concrete Climbers', category: 'powerline', price: 'KSh 5,000', image: '/images/concrete.png' },
+  { id: 4, name: 'Ratchet Heavy Duty', category: 'powerline', price: 'KSh 7,500', image: '/images/ratchet.png' },
 ]
 
 export default function Products() {
