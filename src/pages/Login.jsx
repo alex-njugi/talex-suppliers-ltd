@@ -1,6 +1,7 @@
 // src/pages/Login.jsx
 import React, { useState } from 'react'
 import '../index.css'
+import { Link } from 'react-router-dom'
 
 export default function Login() {
   const [isLogin, setIsLogin] = useState(true)
@@ -17,10 +18,18 @@ export default function Login() {
           <input type="password" placeholder="Password" required />
           <button type="submit">{isLogin ? 'Login' : 'Signup'}</button>
         </form>
+
         <p className="auth-toggle">
           {isLogin ? "Don't have an account?" : "Already have an account?"}
           <span onClick={toggleMode}>{isLogin ? ' Signup' : ' Login'}</span>
         </p>
+
+        {/* ✅ Forgot Password Link */}
+        {isLogin && (
+          <p className="forgot-password">
+            <Link to="/reset-password">Forgot your password?</Link>
+          </p>
+        )}
       </div>
     </div>
   )

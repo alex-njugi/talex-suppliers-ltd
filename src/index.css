@@ -1428,6 +1428,22 @@ img {
   transition: transform 0.3s ease, background 0.3s ease;
 }
 
+.forgot-password {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.forgot-password a {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+
 .hero-button:hover {
   transform: scale(1.05);
   background: linear-gradient(to right, #0044cc, #00aaff);

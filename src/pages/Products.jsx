@@ -4,6 +4,7 @@ import '../index.css'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import { useCart } from '../context/CartContext'
+import { useNavigate } from 'react-router-dom'
 
 const dummyProducts = [
   { id: 1, name: 'Gladiator .D. Polish', category: 'car', price: 'KSh 300', image: '/images/gladiator.jpg' },
@@ -16,6 +17,7 @@ export default function Products() {
   const [category, setCategory] = useState('all')
   const [search, setSearch] = useState('')
   const { cartItems, addToCart, increment, decrement } = useCart()
+  const navigate = useNavigate()
 
   useEffect(() => {
     AOS.init({ duration: 800 })
@@ -47,30 +49,35 @@ export default function Products() {
         />
       </div>
 
-     <div className="product-grid">
-  {filteredProducts.map(product => {
-    const quantity = getQuantity(product.id)
+      <div className="product-grid">
+        {filteredProducts.map(product => {
+          const quantity = getQuantity(product.id)
 
-    return (
-      <div className="product-card" data-aos="zoom-in" key={product.id}>
-        <img src={product.image} alt={product.name} />
-        <h3>{product.name}</h3>
-        <p className="price">{product.price}</p>
+          return (
+            <div className="product-card" data-aos="zoom-in" key={product.id}>
+              <img src={product.image} alt={product.name} />
+              <h3>{product.name}</h3>
+              <p className="price">{product.price}</p>
 
-        <button onClick={() => addToCart(product)}>Add to Cart</button>
+              <button onClick={() => addToCart(product)}>Add to Cart</button>
 
-        {quantity > 0 && (
-          <div className="quantity-controls">
-            <button onClick={() => decrement(product.id)}>-</button>
-            <span>{quantity}</span>
-            <button onClick={() => increment(product.id)}>+</button>
-          </div>
-        )}
+              {quantity > 0 && (
+                <>
+                  <div className="quantity-controls">
+                    <button onClick={() => decrement(product.id)}>-</button>
+                    <span>{quantity}</span>
+                    <button onClick={() => increment(product.id)}>+</button>
+                  </div>
+
+                  <button className="view-cart-btn" onClick={() => navigate('/cart')}>
+                    View Your Cart
+                  </button>
+                </>
+              )}
+            </div>
+          )
+        })}
       </div>
-    )
-  })}
-</div>
-
     </div>
   )
 }
