@@ -1,9 +1,9 @@
 // src/pages/Products.jsx
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import '../index.css'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import { useCart } from '../context/CartContext'
 
 const dummyProducts = [
   { id: 1, name: 'Gladiator .D. Polish', category: 'car', price: 'KSh 300', image: '/images/gladiator.jpg' },
@@ -15,6 +15,7 @@ const dummyProducts = [
 export default function Products() {
   const [category, setCategory] = useState('all')
   const [search, setSearch] = useState('')
+  const { cartItems, addToCart, increment, decrement } = useCart()
 
   useEffect(() => {
     AOS.init({ duration: 800 })
@@ -24,6 +25,11 @@ export default function Products() {
     (category === 'all' || p.category === category) &&
     p.name.toLowerCase().includes(search.toLowerCase())
   )
+
+  const getQuantity = (id) => {
+    const found = cartItems.find(item => item.id === id)
+    return found ? found.quantity : 0
+  }
 
   return (
     <div className="products-container">
@@ -42,16 +48,27 @@ export default function Products() {
       </div>
 
       <div className="product-grid">
-        {filteredProducts.map(product => (
-          <Link to={`/product/${product.id}`} key={product.id} className="product-card-link">
-            <div className="product-card" data-aos="zoom-in">
+        {filteredProducts.map(product => {
+          const quantity = getQuantity(product.id)
+
+          return (
+            <div className="product-card" data-aos="zoom-in" key={product.id}>
               <img src={product.image} alt={product.name} />
               <h3>{product.name}</h3>
               <p className="price">{product.price}</p>
-              <button>View Product</button>
+
+              {quantity === 0 ? (
+                <button onClick={() => addToCart(product)}>Add to Cart</button>
+              ) : (
+                <div className="quantity-controls">
+                  <button onClick={() => decrement(product.id)}>-</button>
+                  <span>{quantity}</span>
+                  <button onClick={() => increment(product.id)}>+</button>
+                </div>
+              )}
             </div>
-          </Link>
-        ))}
+          )
+        })}
       </div>
     </div>
   )

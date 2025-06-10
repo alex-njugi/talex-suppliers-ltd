@@ -1487,6 +1487,18 @@ img {
   font-size: 0.9rem;
 }
 
+.footer-link {
+  color: #00e0ff;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #0072ff;
+  text-decoration: underline;
+}
+
 @media (max-width: 768px) {
   .footer {
     padding: 1.5rem 1rem;
