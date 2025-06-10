@@ -47,29 +47,30 @@ export default function Products() {
         />
       </div>
 
-      <div className="product-grid">
-        {filteredProducts.map(product => {
-          const quantity = getQuantity(product.id)
+     <div className="product-grid">
+  {filteredProducts.map(product => {
+    const quantity = getQuantity(product.id)
 
-          return (
-            <div className="product-card" data-aos="zoom-in" key={product.id}>
-              <img src={product.image} alt={product.name} />
-              <h3>{product.name}</h3>
-              <p className="price">{product.price}</p>
+    return (
+      <div className="product-card" data-aos="zoom-in" key={product.id}>
+        <img src={product.image} alt={product.name} />
+        <h3>{product.name}</h3>
+        <p className="price">{product.price}</p>
 
-              {quantity === 0 ? (
-                <button onClick={() => addToCart(product)}>Add to Cart</button>
-              ) : (
-                <div className="quantity-controls">
-                  <button onClick={() => decrement(product.id)}>-</button>
-                  <span>{quantity}</span>
-                  <button onClick={() => increment(product.id)}>+</button>
-                </div>
-              )}
-            </div>
-          )
-        })}
+        <button onClick={() => addToCart(product)}>Add to Cart</button>
+
+        {quantity > 0 && (
+          <div className="quantity-controls">
+            <button onClick={() => decrement(product.id)}>-</button>
+            <span>{quantity}</span>
+            <button onClick={() => increment(product.id)}>+</button>
+          </div>
+        )}
       </div>
+    )
+  })}
+</div>
+
     </div>
   )
 }

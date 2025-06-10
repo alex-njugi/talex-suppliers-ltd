@@ -1,7 +1,9 @@
 import { useCart } from '../context/CartContext'
+import { useNavigate } from 'react-router-dom'
 
 export default function Cart() {
   const { cartItems, increment, decrement, removeFromCart } = useCart()
+  const navigate = useNavigate()
 
   const total = cartItems.reduce((acc, item) =>
     acc + (parseInt(item.price.replace(/[^\d]/g, '')) || 0) * item.quantity, 0
@@ -36,7 +38,9 @@ export default function Cart() {
 
           <div className="cart-summary">
             <h3>Total: KSh {total.toLocaleString()}</h3>
-            <button className="checkout-btn">Proceed to Checkout</button>
+            <button className="checkout-btn" onClick={() => navigate('/checkout')}>
+              Proceed to Checkout
+            </button>
           </div>
         </>
       )}

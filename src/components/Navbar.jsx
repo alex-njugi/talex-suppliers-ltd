@@ -3,9 +3,12 @@ import { NavLink } from 'react-router-dom';
 import '../index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { useCart } from '../context/CartContext';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const { cartItems } = useCart();
+  const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
     <nav className="navbar">
@@ -23,6 +26,7 @@ export default function Navbar() {
       <div className="auth-links">
         <NavLink to="/cart" className="nav-cart">
           <FontAwesomeIcon icon={faCartShopping} className="cart-icon" />
+          {totalItems > 0 && <span className="cart-badge">{totalItems}</span>}
         </NavLink>
         <NavLink to="/login" className="nav-auth">Log in</NavLink>
       </div>
@@ -31,6 +35,10 @@ export default function Navbar() {
 
       {/* Mobile Dropdown */}
       <div className={`mobile-menu ${open ? 'open' : ''}`}>
+        <NavLink to="/cart" className="nav-cart">
+          <FontAwesomeIcon icon={faCartShopping} className="cart-icon" />
+          {totalItems > 0 && <span className="cart-badge">{totalItems}</span>}
+        </NavLink>
         <NavLink to="/" className="nav-link">Home</NavLink>
         <NavLink to="/products" className="nav-link">Products</NavLink>
         <NavLink to="/about" className="nav-link">About Us</NavLink>
