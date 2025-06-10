@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="footer">
 
       <div className="social-links">
-        <a href="https://wa.me/254792814605" target="_blank" rel="noopener noreferrer">
+        <a href="https://wa.me/254722690154" target="_blank" rel="noopener noreferrer">
           <FaWhatsapp />
         </a>
         <a href="https://www.instagram.com/talex_suppliersltd/" target="_blank" rel="noopener noreferrer">

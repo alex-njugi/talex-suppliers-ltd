@@ -55,6 +55,8 @@ export default function Contact() {
             <div>
               <strong>Phone</strong>
               <p>+254 722 690154</p>
+              <p>+254 705 317188</p>
+              <p>+254 702 840082</p>
             </div>
           </div>
 
